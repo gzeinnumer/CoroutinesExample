@@ -13,13 +13,13 @@ object RetroServer {
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         val httpClient = OkHttpClient.Builder()
             .addInterceptor(interceptor)
-            .addInterceptor { chain ->
-                val request = chain.request().newBuilder()
-                    .addHeader("Accept", "application/json")
-                    .addHeader("Authorization", "Bearer Token")
-                    .build()
-                chain.proceed(request)
-            }
+//            .addInterceptor { chain ->
+//                val request = chain.request().newBuilder()
+//                    .addHeader("Accept", "application/json")
+//                    .addHeader("Authorization", "Bearer Token")
+//                    .build()
+//                chain.proceed(request)
+//            }
             .readTimeout(90, TimeUnit.SECONDS)
             .writeTimeout(90, TimeUnit.SECONDS)
             .connectTimeout(90, TimeUnit.SECONDS)

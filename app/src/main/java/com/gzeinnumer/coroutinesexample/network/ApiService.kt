@@ -8,10 +8,10 @@ import retrofit2.http.Query
 
 interface ApiService {
     //coroutines
-    //?country=us&apiKey=e5430ac2a413408aaafdf60bfa27a874
-    @GET("/posts")
+    //?q=tesla&apiKey=e5430ac2a413408aaafdf60bfa27a874
+    @GET("/everything")
     fun getPostFromUserCoroutines(
-            @Query("country") country: String,
+            @Query("1") q: String,
             @Query("apiKey") apiKey: String
     ): Deferred<Response<ResponseNews>>
 }
